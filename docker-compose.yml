@@ -5,3 +5,12 @@ services:
     ports:
       - 80:5000
     restart: always
+  prometheus-to-cloudwatch:
+    image: cloudposse/prometheus-to-cloudwatch
+    restart: always
+    environment:
+      - CLOUDWATCH_NAMESPACE=prometheus-cloudwatch-pipe
+      - CLOUDWATCH_REGION=us-east-1
+      - CLOUDWATCH_PUBLISH_TIMEOUT=10
+      - PROMETHEUS_SCRAPE_INTERVAL=15
+      - PROMETHEUS_SCRAPE_URL=http://app/metrics
