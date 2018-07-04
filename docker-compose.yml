@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+    image: dirkjkb/python-prometheus-sample:latest
+    ports:
+      - 80:80
+    restart: always
