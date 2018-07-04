@@ -11,6 +11,6 @@ services:
     environment:
       - CLOUDWATCH_NAMESPACE=prometheus-cloudwatch-pipe
       - CLOUDWATCH_REGION=us-east-1
-      - CLOUDWATCH_PUBLISH_TIMEOUT=10
-      - PROMETHEUS_SCRAPE_INTERVAL=15
+      - CLOUDWATCH_PUBLISH_TIMEOUT=3
+      - PROMETHEUS_SCRAPE_INTERVAL=5
       - PROMETHEUS_SCRAPE_URL=http://app:5000/metrics
